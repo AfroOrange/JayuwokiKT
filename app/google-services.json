@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "283906249329",
+    "firebase_url": "https://jayuwokidb-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "jayuwokidb",
+    "storage_bucket": "jayuwokidb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283906249329:android:f509730e5c001a545181d0",
+        "android_client_info": {
+          "package_name": "com.example.privaditaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMuoDq0gjKvq9v1RzkPaQ1-RY3ElfAIMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
