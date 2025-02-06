@@ -25,7 +25,7 @@ class SplashScreen : AppCompatActivity() {
         // Delay for 3 seconds and then start the LoginActivity
         GlobalScope.launch {
             delay(2000)
-            startActivity(Intent(this@SplashScreen, LoginActivity::class.java))
+            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
             finish()
         }
     }
