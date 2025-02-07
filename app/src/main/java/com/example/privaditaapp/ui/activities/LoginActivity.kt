@@ -2,6 +2,7 @@ package com.example.privaditaapp.ui.activities
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -39,6 +40,8 @@ class LoginActivity : AppCompatActivity() {
         auth = Firebase.auth
         firestore = FirebaseFirestore.getInstance()
 
+        val intent = Intent(this, MainActivity::class.java)
+
         loginButton.setOnClickListener {
             val email = usernameField.text.toString()
             val password = passwordField.text.toString()
@@ -47,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 signWithCredentials(email, password)
                 Log.d(TAG, "!!!!Email: $email")
                 Log.d(TAG, "!!!!Password: $password")
+
             } else {
                 Toast.makeText(
                     baseContext,
@@ -119,6 +123,12 @@ class LoginActivity : AppCompatActivity() {
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error writing document", e)
                         }
+                    
+                    // if the login is successful, go to the main activity
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("email", email)
+                    startActivity(intent)
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithEmail:failure", task.exception)

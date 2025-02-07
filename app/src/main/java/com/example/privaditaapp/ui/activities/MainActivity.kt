@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     // ui elements
     private lateinit var themeButton: ImageButton
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var userEmail: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +69,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         themeButton = findViewById(R.id.themeButton)
+        userEmail = findViewById(R.id.userEmail)
+
+        // get the email from the intent
+        val email = intent.getStringExtra("email")
+        userEmail.text = email
+
         sharedPreferences = getSharedPreferences("theme_prefs", MODE_PRIVATE)
 
         themeButton.setOnClickListener {
