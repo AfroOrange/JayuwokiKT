@@ -1,7 +1,10 @@
 package com.example.privaditaapp.ui.activities
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
+import android.widget.ImageButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.privaditaapp.R
 import com.example.privaditaapp.databinding.ActivityMainBinding
 
@@ -18,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+    // ui elements
+    private lateinit var themeButton: ImageButton
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +52,34 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+        // set theme button
         return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        // initialize ui elements
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
+        themeButton = findViewById(R.id.themeButton)
+        sharedPreferences = getSharedPreferences("theme_prefs", MODE_PRIVATE)
+
+        themeButton.setOnClickListener {
+            val isDarkTheme = sharedPreferences.getBoolean("isDarkTheme", false)
+            if (isDarkTheme) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                sharedPreferences.edit().putBoolean("isDarkTheme", false).apply()
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                sharedPreferences.edit().putBoolean("isDarkTheme", true).apply()
+            }
+        }
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+
     }
 }

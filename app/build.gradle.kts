@@ -41,8 +41,9 @@ android {
 }
 
 dependencies {
-
-    implementation(platform(libs.firebase.bom))
+    implementation(platform(libs.firebase.bom.v3380))
+    implementation(libs.google.firebase.auth)
+    implementation(libs.google.firebase.firestore)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

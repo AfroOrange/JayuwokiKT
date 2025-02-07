@@ -9,9 +9,79 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="prueba"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="253dp"
+        android:layout_marginTop="48dp"
+        android:text="Jayuwoki DB Manager"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/usernameField"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/usernameField"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="416dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/passwordField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="20dp"
+        android:text="Login"
+        app:layout_constraintEnd_toStartOf="@+id/registerButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="297dp"
+        android:layout_height="294dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/usernameField"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/usernameField"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bochudin" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="72dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
