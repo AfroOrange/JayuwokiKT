@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class UsersViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "You haven't selected a server yet"
     }
     val text: LiveData<String> = _text
 }
