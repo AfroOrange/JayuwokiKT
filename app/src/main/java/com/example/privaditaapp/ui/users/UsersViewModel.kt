@@ -1,4 +1,4 @@
-package com.example.privaditaapp.ui.gallery
+package com.example.privaditaapp.ui.users
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

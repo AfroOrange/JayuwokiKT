@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/playerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/playerElo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Elo"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/playerWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Wins"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/playerLosses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Losses"
+        android:textSize="16sp" />
+
+    <!-- Add other player details here -->
+
+</LinearLayout>

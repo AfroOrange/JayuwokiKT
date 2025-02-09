@@ -1,6 +1,7 @@
 package com.example.privaditaapp.ui.slideshow
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +13,6 @@ import com.example.privaditaapp.databinding.FragmentSlideshowBinding
 class SlideshowFragment : Fragment() {
 
     private var _binding: FragmentSlideshowBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,6 +30,9 @@ class SlideshowFragment : Fragment() {
         slideshowViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        Log.d("SlideshowFragment", "onCreateView: SlideshowFragment view created")
+
         return root
     }
 
