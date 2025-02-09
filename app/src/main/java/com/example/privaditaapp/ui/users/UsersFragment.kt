@@ -27,7 +27,6 @@ class UsersFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val usersViewModel = ViewModelProvider(this).get(UsersViewModel::class.java)
 
         _binding = FragmentUsersBinding.inflate(inflater, container, false)
         val root: View = binding.root

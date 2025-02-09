@@ -23,11 +23,9 @@ class PlayersAdapter(private val onItemClick: (Players) -> Unit) : ListAdapter<P
 
     class PlayerViewHolder(itemView: View, private val onItemClick: (Players) -> Unit) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.playerName)
-        private val scoreTextView: TextView = itemView.findViewById(R.id.playerScore)
 
         fun bind(player: Players) {
             nameTextView.text = player.name
-            scoreTextView.text = player.elo.toString()
             itemView.setOnClickListener { onItemClick(player) }
         }
     }
