@@ -21,4 +21,32 @@ class FirebaseManager {
                 onFailure(exception)
             }
     }
+
+    fun addPlayer(player: Players, playerName: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        firestore.collection("Jayuwoki").document("Privadita").collection("Players")
+            .document(playerName)
+            .set(player)
+            .addOnSuccessListener {
+                Log.d("FirebaseManager", "Player added successfully")
+                onSuccess()
+            }
+            .addOnFailureListener { exception ->
+                Log.w("FirebaseManager", "Error adding player", exception)
+                onFailure(exception)
+            }
+    }
+
+    fun deletePlayer(playerName: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        firestore.collection("Jayuwoki").document("Privadita").collection("Players")
+            .document(playerName)
+            .delete()
+            .addOnSuccessListener {
+                Log.d("FirebaseManager", "Player deleted successfully")
+                onSuccess()
+            }
+            .addOnFailureListener { exception ->
+                Log.w("FirebaseManager", "Error deleting player", exception)
+                onFailure(exception)
+            }
+    }
 }
